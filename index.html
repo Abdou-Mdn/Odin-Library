@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <img id="logo" src="/images/books.png">
+            Library
+        </h1>
+        <button id="addBtn">
+            <i class="fa fa-plus-circle"></i>
+            Add New Book
+        </button>
+    </header>
+    <div id="container">
+        <form id="newBook">
+            <button id="hideBtn" type="button">
+                <i class="fa fa-close"></i>
+            </button>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Enter book's title" autocomplete="off" required>
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" placeholder="Enter book's author" autocomplete="off" required>
+            <label for="pages">Number of pages:</label>
+            <input type="number" name="pages" id="pages" min="1" value="1" autocomplete="off" required>
+            <label for="status">
+                <input type="checkbox" name="status" id="status">
+                I have read this book.
+            </label>
+            <button type="submit" id="saveBtn">Save</button>
+        </form>
+    </div>
+    <main id="bookShelf">
+        <div class="book">
+            <span class="id">1</span>
+            <button class="deleteBtn">
+                <i class="fa fa-trash"></i>
+            </button>
+            <h2 class="title">The subtle art of not giving a fuck.</h2>
+            <p>by Mark Manson.</p>
+            <p>224 pages</p>
+            <p>Status: <span class="read">Read</span></p>
+            <button class="switch on"></button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Copyrights, 2024</p>
+    </footer>
+</body>
+</html>

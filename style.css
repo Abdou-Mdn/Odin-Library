@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+:root {
+    --COLOR-1: #492F20;
+    --COLOR-2: #F7F7DF;
+    --COLOR-3: #E3D49F;
+    --COLOR-4: #09090b;
+    --ACTION-COLOR: #9F4410;
+    --SAVE-COLOR: #109D6C;
+    --SAVE-COLOR-D : #0B6545;
+    --DELETE-COLOR: #B01E11;
+    --DELETE-COLOR-L: #E73E2F;
+
+    --PADDING: 0.8rem;
+    --BORDER-RADIUS: 0.5rem;
+    --BOX-SHAODW: 2px 1px 3px #00000088;
+    --SMOOTH: all 300ms ease;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--PADDING);
+    background-color: var(--COLOR-2);
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-family: 'MedievalSharp', cursive;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 2.5rem;
+}
+
+#addBtn {
+    margin-inline: 1.2rem;
+    padding: var(--PADDING);
+    font-weight: 600;
+    border: var(--COLOR-1) 1px solid;
+    border-bottom: var(--COLOR-1) 5px solid;
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--ACTION-COLOR);
+    color: var(--COLOR-2);
+    cursor: pointer;
+}
+
+#addBtn:hover, #addBtn:focus, #saveBtn:hover, #saveBtn:focus {
+    box-shadow: var(--BOX-SHAODW);
+}
+
+#addBtn:active {
+    border-bottom: var(--COLOR-1) 1px solid;
+}
+
+.hidden {
+    display: none;
+}
+
+#container {
+    height: 0;
+    overflow: hidden;
+    transition: var(--SMOOTH);
+    background-color: var(--COLOR-2);
+}
+
+#container.open {
+    height: 470px;
+}
+
+#newBook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--COLOR-2);
+    padding: var(--PADDING);
+    margin-top: 1.3rem;
+    position: relative;
+}
+
+
+#hideBtn {
+    border: none;
+    background-color: transparent;
+    color: var(--COLOR-1);
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    transition: var(--SMOOTH);
+}
+
+#hideBtn:focus, #hideBtn:hover {
+    color: var(--ACTION-COLOR);
+    font-size: 1.2rem;
+}
+
+#newBook label, #newBook input {
+    width: 50%;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border-radius: var(--BORDER-RADIUS);
+}
+
+#newBook input {
+    border: 1px solid var(--COLOR-1);
+}
+
+#newBook #status {
+    height: 1rem;
+    width: 1rem;
+}
+
+#saveBtn {
+    margin-inline: 1.2rem;
+    padding: var(--PADDING);
+    width: 8rem;
+    font-weight: 700;
+    text-transform: uppercase ;
+    border: var(--SAVE-COLOR-D) 1px solid;
+    border-bottom: var(--SAVE-COLOR-D) 5px solid;
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--SAVE-COLOR);
+    color: var(--COLOR-4);
+    cursor: pointer;
+}
+
+#saveBtn:active {
+    border-bottom: var(--SAVE-COLOR-D) 1px solid;
+}
+
+
+#bookShelf {
+    min-height: 90vh;
+    background-color: var(--COLOR-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.book {
+    background-color: var(--COLOR-1);
+    color: var(--COLOR-2);
+    height: 24rem;
+    width: 17rem;
+    margin-inline: 2rem;
+    box-shadow: var(--BOX-SHAODW);
+    padding: var(--PADDING);
+    border-left: var(--COLOR-4) 3px dashed;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    position: relative;
+}
+
+.book::before {
+    content: "";
+    height: 24rem;
+    width: 1rem;
+    background-color: var(--COLOR-1);
+    box-shadow: 1px 1px 3px #00000088;
+    position: absolute;
+    left: -1.1rem;
+    top: 0;
+}
+
+.id {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--COLOR-2);
+}
+
+.deleteBtn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    background-color: #0000;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--DELETE-COLOR);
+    transition: var(--SMOOTH);
+}
+
+.deleteBtn:focus, .deleteBtn:hover {
+    color: var(--DELETE-COLOR-L);
+    font-size: 1.3rem;
+}
+
+.title {
+    margin: 3rem 1.5rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+.book p {
+    margin: 0.5rem;
+}
+
+.read {
+    color: var(--SAVE-COLOR);
+}
+
+.notRead {
+    color: var(--DELETE-COLOR-L);
+}
+
+.switch {
+    width: 2.5rem;
+    height: 1.4rem;
+    border: none;
+    background-color: var(--COLOR-3);
+    float: right;
+    margin: 5rem 1rem 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.switch::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--COLOR-1);
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    transition: var(--SMOOTH);
+}
+
+.switch.on {
+    background-color: var(--COLOR-2);
+}
+
+.on.switch::before {
+    transform: translateX(1rem);
+}
+
+
+footer {
+    background-color: var(--COLOR-2);
+}
+
+footer p {
+    text-align: center;
+    padding: 0.5rem;
+}
