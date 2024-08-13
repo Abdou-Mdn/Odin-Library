@@ -158,6 +158,7 @@ header h1 {
 
 
 #bookShelf {
+    min-height: 40vh;
     background-color: var(--COLOR-3);
     display: flex;
     flex-wrap: wrap;
@@ -267,7 +268,7 @@ header h1 {
 
 
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: var(--COLOR-2);
