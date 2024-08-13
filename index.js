@@ -25,7 +25,7 @@ const displayBooks = () => {
     bookShelf.replaceChildren();
     if(!library.length) {
         const message = document.createElement("p");
-        message.innerText = "You currently have no books on the shelf !!";
+        message.innerText = "Saved books will appear here !!";
         bookShelf.appendChild(message);
     }else {
         library.map( (book, index) => {

@@ -31,6 +31,7 @@
 body {
     min-height: 100vh;
     position: relative;
+    background-color: var(--COLOR-3);
 }
 
 header {
@@ -59,7 +60,7 @@ header h1 {
 }
 
 #addBtn {
-    margin-inline: 1.2rem;
+    margin-inline: 0.8rem;
     padding: var(--PADDING);
     font-weight: 600;
     border: var(--COLOR-1) 1px solid;
@@ -122,7 +123,7 @@ header h1 {
 }
 
 #newBook label, #newBook input {
-    width: 50%;
+    width: min(70%,400px);
     margin: 0.2rem;
     padding: 0.5rem;
     border-radius: var(--BORDER-RADIUS);
@@ -157,7 +158,6 @@ header h1 {
 
 
 #bookShelf {
-    min-height: 90vh;
     background-color: var(--COLOR-3);
     display: flex;
     flex-wrap: wrap;
@@ -194,7 +194,7 @@ header h1 {
     position: absolute;
     top: 1rem;
     left: 1.5rem;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: var(--COLOR-2);
 }
 
@@ -216,8 +216,13 @@ header h1 {
 }
 
 .title {
-    margin: 3rem 1.5rem 1.5rem;
+    margin: 3rem 1rem 1rem;
+    padding: var(--PADDING);
     font-size: 1.2rem;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .book p {
@@ -238,7 +243,7 @@ header h1 {
     border: none;
     background-color: var(--COLOR-3);
     float: right;
-    margin: 5rem 1rem 0.5rem 1rem;
+    margin: 1rem;
     border-radius: 1rem;
     cursor: pointer;
     position: relative;
@@ -266,6 +271,9 @@ header h1 {
 
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: var(--COLOR-2);
 }
 
