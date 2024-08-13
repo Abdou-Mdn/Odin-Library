@@ -219,10 +219,6 @@ header h1 {
     margin: 3rem 1rem 1rem;
     padding: var(--PADDING);
     font-size: 1.2rem;
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .book p {
